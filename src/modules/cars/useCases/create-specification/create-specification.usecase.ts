@@ -5,19 +5,19 @@ interface IRequest {
     description: string
 }
 
-class CreateSpecificationService {
+class CreateSpecificationUseCase {
 
-    constructor(private SpecificationRepository: ISpecificationRepository) { }
+    constructor(private specificationRepository: ISpecificationRepository) { }
 
     execute({ name, description }: IRequest): void {
-        const specification = this.SpecificationRepository.getByName(name)
+        const specification = this.specificationRepository.getByName(name)
         if (specification) {
             throw new Error('Specification already exists')
         }
 
-        this.SpecificationRepository.create({ name, description })
+        this.specificationRepository.create({ name, description })
     }
 
 }
 
-export { CreateSpecificationService }
+export { CreateSpecificationUseCase }
