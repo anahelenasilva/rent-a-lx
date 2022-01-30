@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import { GetAllCategoriesUseCase } from './get-all-categories.usecase';
+import { Request, Response } from 'express'
+import { GetAllCategoriesUseCase } from './get-all-categories.usecase'
 
 class GetAllCategoriesController {
     constructor(private getAllCategoriesUseCase: GetAllCategoriesUseCase) { }

@@ -1,5 +1,5 @@
-import { Specification } from "../models/specification";
-import { ICreateSpecificationDTO, ISpecificationRepository } from "./ISpecificationRepository";
+import { Specification } from '../models/specification'
+import { ICreateSpecificationDTO, ISpecificationRepository } from './ISpecificationRepository'
 
 class SpecificationRepository implements ISpecificationRepository {
     private specifications: Specification[]
@@ -9,7 +9,7 @@ class SpecificationRepository implements ISpecificationRepository {
     }
 
     getByName(name: string): Specification {
-        return this.specifications.find(c => c.name === name);
+        return this.specifications.find(c => c.name === name)
     }
 
     create(dto: ICreateSpecificationDTO): void {

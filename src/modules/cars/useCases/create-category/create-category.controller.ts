@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import { CreateCategoryUseCase } from './create-category.usecase';
+import { Request, Response } from 'express'
+import { CreateCategoryUseCase } from './create-category.usecase'
 
 class CreateCategoryController {
 

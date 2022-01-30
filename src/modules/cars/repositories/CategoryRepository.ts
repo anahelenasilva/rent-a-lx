@@ -28,11 +28,11 @@ class CategoryRepository implements ICategoryRepository {
     }
 
     getAll(): Category[] {
-        return this.categories;
+        return this.categories
     }
 
     getByName(name: string): Category {
-        return this.categories.find(c => c.name === name);
+        return this.categories.find(c => c.name === name)
     }
 }
 
