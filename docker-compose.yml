@@ -11,8 +11,8 @@ services:
       - POSTGRES_DB=rentx
     volumes:
       - pgdata:/data/postgres
-    networks:
-      - default
+    ports:
+      - 5432:5432
   app:
     build: .
     container_name: rentx
@@ -20,14 +20,9 @@ services:
       - "3333:3333"
     volumes:
       - .:/usr/app
-    networks:
-      - default
     depends_on:
       - database_rentx
 
-networks:
-  default:
-    driver: bridge
 volumes:
   pgdata:
     driver: local
