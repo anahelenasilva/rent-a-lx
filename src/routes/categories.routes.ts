@@ -1,15 +1,14 @@
 import { Router } from 'express'
 import multer from 'multer'
 
-import createCategoryController from '../modules/cars/useCases/create-category'
+import { CreateCategoryController } from '../modules/cars/useCases/create-category/create-category.controller'
 import getAllCategoriesController from '../modules/cars/useCases/get-all-categories'
 import importCategoryController from '../modules/cars/useCases/import-category'
 
 const categoriesRoutes = Router()
 
-categoriesRoutes.post('/', (request, response) => {
-    return createCategoryController().handle(request, response)
-})
+const createCategoryController = new CreateCategoryController()
+categoriesRoutes.post('/', createCategoryController.handle)
 
 categoriesRoutes.get('/', (request, response) => {
     return getAllCategoriesController().handle(request, response)
