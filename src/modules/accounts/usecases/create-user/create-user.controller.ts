@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import { container } from "tsyringe";
-import { CreateUserUsecase } from "./create-user.usecase";
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
+import { CreateUserUsecase } from './create-user.usecase';
 
 class CreateUserController {
     async handle(request: Request, response: Response): Promise<Response> {
