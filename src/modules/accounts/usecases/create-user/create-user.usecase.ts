@@ -12,6 +12,11 @@ class CreateUserUsecase {
     }
 
     async execute({ drivers_license, email, name, password, username }: ICreateUserDto): Promise<void> {
+        const user = await this.userRepository.getByEmail(email)
+        if (user) {
+            throw new Error('User already exists')
+        }
+
         const passwordHash = await hash(password, 10)
 
         await this.userRepository.create({
